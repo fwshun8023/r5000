@@ -27,6 +27,8 @@ gem 'turbolinks', '~> 5.x'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'bootstrap-sass'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -49,13 +51,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem 'annotate'
-  gem 'rspec-rails'
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+    gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
+  end
   gem 'factory_girl_rails'
   gem 'better_errors'
   gem 'awesome_print'
   gem 'pry-rails'
   gem 'pry-byebug'
-  gem 'pry-stack_explorer'
 end
 
 group :test do
