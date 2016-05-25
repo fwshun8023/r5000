@@ -15,6 +15,10 @@ gem 'bootstrap-sass'
 gem 'redcarpet', '~> 3.3.4'
 gem 'rouge', '~> 1.8.0'
 
+# login
+gem 'devise'
+gem 'devise-bootstrap-views'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
