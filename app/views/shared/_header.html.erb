@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default">
+  <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav">
+        <li class="<%= 'active' if params[:controller] == 'home' %>" >
+          <%= link_to("首页", root_path) %>
+        </li>
+        <li class="<%= 'active' if params[:controller] == 'articles' %>">
+          <%= link_to("文章", articles_path) %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
