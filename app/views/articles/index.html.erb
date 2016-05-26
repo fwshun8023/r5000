@@ -4,4 +4,4 @@
   <% end %>
 </div>
 
-<%= link_to '新建文章', new_article_path %>
+<%= link_to('新建文章', new_article_path) if can? :create, Article %>
