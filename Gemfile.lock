@@ -1,4 +1,14 @@
 GIT
+  remote: git@github.com:Darchro/r5000_model.git
+  revision: 386787c72fcfe1e758098f8936b5adaabde354a8
+  branch: master
+  specs:
+    r5000_model (0.1.0)
+      activerecord
+      activesupport
+      bcrypt
+
+GIT
   remote: https://github.com/rspec/rspec-core.git
   revision: a99ff265c6c9d08650acbb34917aabcf1a60c1d4
   branch: master
@@ -289,6 +299,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 3.0)
+  r5000_model!
   rails (>= 5.0.0.rc1, < 5.1)
   redcarpet (~> 3.3.4)
   rouge (~> 1.8.0)
