@@ -1,59 +1,49 @@
-class ArticlesController < ApplicationController
+class ArticlesController < BaseController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  # GET /articles
   def index
-    @articles = Article.all
+    @articles = Article.all.order("id desc")
   end
 
-  # GET /articles/1
-  def show
-  end
+  def show; end
 
-  # GET /articles/new
   def new
-    @article = Article.new
+    @article = current_user.articles.new
   end
 
-  # GET /articles/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /articles
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
 
     if @article.save
-      redirect_to @article, notice: 'Article was successfully created.'
+      redirect_to article_path(@article), notice: 'Article was successfully created.'
     else
       render :new
     end
   end
 
-  # PATCH/PUT /articles/1
   def update
     if @article.update(article_params)
-      redirect_to @article, notice: 'Article was successfully updated.'
+      redirect_to article_path(@article), notice: 'Article was successfully updated.'
     else
       render :edit
     end
   end
 
-  # DELETE /articles/1
   def destroy
     @article.destroy
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_article
-      @article = Article.find(params[:id])
+      @article = Article.find_by(id: params[:id])
+      return redirect_to articles_path, notice: 'Article was not found' unless @article
     end
 
-    # Only allow a trusted parameter "white list" through.
     def article_params
-      params.require(:article).permit(:title, :content)
+      params.require(:r5000_model_article).permit(:title, :content)
     end
 end
