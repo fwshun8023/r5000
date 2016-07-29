@@ -1,6 +1,6 @@
 source 'https://gems.ruby-china.org'
 
-gem 'rails', '>= 5.0.0.rc1', '< 5.1'
+gem 'rails', '>= 5.0', '< 5.1'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -26,9 +26,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'annotate'
-  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
-    gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
-  end
+  gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails'
   gem 'better_errors'
   gem 'awesome_print'
