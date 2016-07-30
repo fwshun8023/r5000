@@ -3,6 +3,6 @@ zh-CN:
     models:
       article: 文章
     attributes:
-      article:
+      r5000_model_article:
         title: 标题
         content: 内容

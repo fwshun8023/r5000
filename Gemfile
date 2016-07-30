@@ -1,4 +1,4 @@
-source 'https://gems.ruby-china.org'
+source 'https://rubygems.org'
 
 gem 'rails', '>= 5.0', '< 5.1'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
@@ -20,18 +20,22 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'cancancan'
 
-gem 'r5000_model', git: "git@github.com:Darchro/r5000_model.git", branch: 'master'
+# gem 'r5000_model', git: "git@github.com:Darchro/r5000_model.git", branch: 'master'
+gem 'r5000_model', path: '/Users/fanwei/pp/r5000_model'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'annotate'
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails'
   gem 'better_errors'
   gem 'awesome_print'
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
 end
 
 group :development do
