@@ -16,6 +16,14 @@ namespace :setup do
     end
   end
 
+  desc "Upload r5000.crt file."
+  task :upload_crt do
+    on roles(:web) do
+      execute "mkdir -p /home/fw/r5000"
+      upload! StringIO.new(File.read("r5000.crt")), "/home/fw/r5000/r5000.crt"
+    end
+  end
+
   desc "Seed the database."
   task :seed_db do
     on roles(:web) do

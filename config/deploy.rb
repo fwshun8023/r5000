@@ -35,7 +35,7 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/syst
 # Default value for keep_releases is 5
 set :keep_releases, 2
 
-set :rvm_ruby_version, '2.3.0'
+set :rvm_ruby_version, '2.3.1'
 
 # Defaults to false
 # Skip migration if files in db/migrate were not modified
@@ -43,3 +43,7 @@ set :rvm_ruby_version, '2.3.0'
 
 # set this to the number of versions to keep
 set :keep_assets, 2 
+
+set :nginx_server_name, "fwshun.com www.fwshun.com"
+
+set :nginx_use_ssl, true
