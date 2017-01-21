@@ -20,8 +20,7 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'cancancan'
 
-# gem 'r5000_model', git: "git@github.com:Darchro/r5000_model.git", branch: 'master'
-gem 'r5000_model', path: '/Users/fanwei/pp/r5000_model'
+gem 'r5000_model', git: "git@github.com:Darchro/r5000_model.git", branch: 'master'
 
 gem 'weixin_authorize'
 
